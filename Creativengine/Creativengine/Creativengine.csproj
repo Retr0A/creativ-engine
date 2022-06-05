@@ -36,9 +36,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\Engine\EntryPoint.cs" />
+    <Compile Include="src\Engine\Vector3.cs" />
+    <Compile Include="src\Main\EntryPoint.cs" />
+    <Compile Include="src\Engine\GameObject.cs" />
     <Compile Include="src\Graphics\Window.cs" />
     <Compile Include="src\MyGui\MyGuiPanel.cs" />
+    <Compile Include="src\Panels\ObjectsPanel.cs" />
+    <Compile Include="src\Panels\AssetsPanel.cs" />
+    <Compile Include="src\Panels\WorldSettingsPanel.cs" />
+    <Compile Include="src\Panels\PropertiesPanel.cs" />
+    <Compile Include="src\Panels\ViewportPanel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

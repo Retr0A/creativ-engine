@@ -34,7 +34,7 @@ namespace MyGui
 
         private bool canMove = true;
 
-        public void addControl(Control control)
+        public void AddControl(Control control)
         {
             contentPanel.Controls.Add(control);
         }
@@ -272,6 +272,8 @@ namespace MyGui
 
             isMouseDown = true;
 
+            panel.BringToFront();
+
             /*dockPlaces[0].Visible = true;
             dockPlaces[1].Visible = true;
             dockPlaces[2].Visible = true;
@@ -303,6 +305,11 @@ namespace MyGui
             //dockPlaces[2].Visible = true;
             //dockPlaces[3].Visible = true;
             //dockPlaces[4].Visible = true;
+        }
+
+        public Size GetSize()
+        {
+            return panel.Size;
         }
     }
 }
