@@ -38,11 +38,18 @@
   <ItemGroup>
     <Compile Include="src\Engine\EntryPoint.cs" />
     <Compile Include="src\Graphics\Window.cs" />
+    <Compile Include="src\MyGui\MyGuiPanel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dependencies\MyGui\myGui\myGui.csproj">
+      <Project>{0cada5c7-4f7e-406f-ad27-93638f0a4b98}</Project>
+      <Name>myGui</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

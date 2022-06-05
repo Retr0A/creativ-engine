@@ -22,8 +22,6 @@ namespace Creativengine
                 Height = HEIGHT,
                 Text = TITLE
             };
-
-            Application.Run(form);
         }
 
         public static Form GetCurrentWindow()
