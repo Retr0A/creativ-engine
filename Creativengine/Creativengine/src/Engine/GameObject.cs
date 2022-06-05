@@ -51,6 +51,8 @@ namespace Creativengine
         public void RefreshProperties()
         {
             panel.BackColor = Color;
+            panel.Location = new Point(Position.GetX(), Position.GetY());
+            panel.Size = new Size(Scale.GetX(), Scale.GetY());
         }
 
         public Panel GetPanel()

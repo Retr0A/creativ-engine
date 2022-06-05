@@ -32,7 +32,8 @@ namespace Creativengine
             objectsView = new TreeView() {
                 Dock = DockStyle.Fill,
                 Enabled = false,
-                BorderStyle = BorderStyle.None
+                BorderStyle = BorderStyle.None,
+                BackColor = Color.LightGray
             };
 
             objectsView.Nodes.Add("Test");
@@ -44,7 +45,7 @@ namespace Creativengine
         {
             objectsView.Nodes.Clear();
 
-            foreach (GameObject item in EntryPoint.gameObjects)
+            foreach (GameObject item in EntryPoint.GameObjects)
             {
                 objectsView.Nodes.Add(item.Name);
             }

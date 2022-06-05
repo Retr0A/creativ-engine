@@ -11,7 +11,7 @@ namespace Creativengine
 {
     class EntryPoint
     {
-        public static List<GameObject> gameObjects { get; set; } = new List<GameObject>();
+        public static List<GameObject> GameObjects { get; set; } = new List<GameObject>();
 
         public static GameObject SelectedObject { get; set; } = null;
 
@@ -19,17 +19,19 @@ namespace Creativengine
         private static ToolStripDropDownButton fileDropDown;
         private static ToolStripDropDownButton objectDropDown;
 
+        private static ViewportPanel viewportPanel;
+
         public static void Main(string[] args)
         {
             Window.Create();
 
             GameObject test1Object = new GameObject("Test 1", new Vector3(10, 10), new Vector3(100, 100), Color.Green);
-            gameObjects.Add(test1Object);
+            GameObjects.Add(test1Object);
 
             GameObject test2Object = new GameObject("Test 2", new Vector3(120, 10), new Vector3(100, 100), Color.Blue);
-            gameObjects.Add(test2Object);
+            GameObjects.Add(test2Object);
 
-            ViewportPanel viewportPanel = new ViewportPanel(Color.Black);
+            viewportPanel = new ViewportPanel(Color.Black);
             viewportPanel.DrawContent();
 
             AssetsPanel assetsPanel = new AssetsPanel();
@@ -70,7 +72,8 @@ namespace Creativengine
                     new Vector3(50, 50),
                     Color.White);
 
-                gameObjects.Add(instantiatedObject);
+                GameObjects.Add(instantiatedObject);
+                viewportPanel.RefreshCanvas();
             }
         }
 

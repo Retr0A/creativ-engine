@@ -43,15 +43,29 @@ namespace Creativengine
             canvas.MouseClick += OnCanvasMouseClick;
 
             viewportPanel.AddControl(canvas);
-        }
+            
+            canvas.Controls.Clear();
 
-        public static void Tick(object sender, EventArgs e)
-        {
-            foreach (GameObject item in EntryPoint.gameObjects)
+            foreach (GameObject item in EntryPoint.GameObjects)
             {
                 item.Render();
                 canvas.Controls.Add(item.GetPanel());
             }
+        }
+
+        public void RefreshCanvas()
+        {
+            canvas.Controls.Clear();
+
+            foreach (GameObject item in EntryPoint.GameObjects)
+            {
+                item.Render();
+                canvas.Controls.Add(item.GetPanel());
+            }
+        }
+
+        public static void Tick(object sender, EventArgs e)
+        {
         }
 
         private void OnCanvasMouseClick(object sender, MouseEventArgs e)
