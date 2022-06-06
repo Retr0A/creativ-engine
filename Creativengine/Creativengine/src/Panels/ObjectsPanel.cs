@@ -31,7 +31,6 @@ namespace Creativengine
 
             objectsView = new TreeView() {
                 Dock = DockStyle.Fill,
-                Enabled = false,
                 BorderStyle = BorderStyle.None,
                 BackColor = Color.LightGray
             };
@@ -39,9 +38,20 @@ namespace Creativengine
             objectsView.Nodes.Add("Test");
 
             objectsPanel.AddControl(objectsView);
+            
+            objectsView.Nodes.Clear();
+
+            foreach (GameObject item in EntryPoint.GameObjects)
+            {
+                objectsView.Nodes.Add(item.Name);
+            }
         }
 
         public static void Tick(object sender, EventArgs e)
+        {
+        }
+
+        public void Refresh()
         {
             objectsView.Nodes.Clear();
 

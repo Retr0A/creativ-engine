@@ -20,6 +20,7 @@ namespace Creativengine
         private static ToolStripDropDownButton objectDropDown;
 
         private static ViewportPanel viewportPanel;
+        private static ObjectsPanel objectsPanel;
 
         public static void Main(string[] args)
         {
@@ -36,7 +37,7 @@ namespace Creativengine
 
             AssetsPanel assetsPanel = new AssetsPanel();
             PropertiesPanel propertiesPanel = new PropertiesPanel();
-            ObjectsPanel objectsPanel = new ObjectsPanel();
+            objectsPanel = new ObjectsPanel();
 
             toolBar = new ToolStrip() {
                 Dock = DockStyle.Top,
@@ -56,6 +57,7 @@ namespace Creativengine
             fileDropDown.DropDownItems.Add("Exit Program").Click += FileMenuOnClick;
             fileDropDown.DropDownItems.Add("About").Click += FileMenuOnClick;
             objectDropDown.DropDownItems.Add("New Object").Click += ObjectMenuOnClick;
+            objectDropDown.DropDownItems.Add("Delete Selected Object").Click += ObjectMenuOnClick;
             toolBar.Items.Add(fileDropDown);
             toolBar.Items.Add(objectDropDown);
             Window.GetCurrentWindow().Controls.Add(toolBar);
@@ -74,6 +76,13 @@ namespace Creativengine
 
                 GameObjects.Add(instantiatedObject);
                 viewportPanel.RefreshCanvas();
+                objectsPanel.Refresh();
+            }
+            else if (((ToolStripItem)sender).Text == "Delete Selected Object")
+            {
+                GameObjects.Remove(SelectedObject);
+                viewportPanel.RefreshCanvas();
+                objectsPanel.Refresh();
             }
         }
 

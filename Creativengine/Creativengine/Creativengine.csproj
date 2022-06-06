@@ -36,6 +36,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Engine\Camera.cs" />
     <Compile Include="src\Engine\Vector3.cs" />
     <Compile Include="src\Main\EntryPoint.cs" />
     <Compile Include="src\Engine\GameObject.cs" />
